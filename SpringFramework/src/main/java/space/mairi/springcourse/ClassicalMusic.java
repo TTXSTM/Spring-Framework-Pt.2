@@ -1,23 +1,39 @@
 package space.mairi.springcourse;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
-@Component
-public class ClassicalMusic implements Music {
 
-    private List<String> songs = new ArrayList<String>();
+    @Component
+    public class ClassicalMusic implements Music {
 
-    {
-        songs.add("Hungarian Rhapsody");
-        songs.add("Toccata and Fugue in D minor");
-        songs.add("Symphony No.5 in C minor");
+
+    @PostConstruct
+    public void doMyInit(){
+        System.out.println("Doing my initialization");
     }
 
-
+    @PreDestroy
+    public void doMyDestroy(){
+        System.out.println("Doing my destruction");
+    }
     @Override
-    public List<String> getSong() {
-        return songs;
+    public String getSong(){
+        return "Hungarian Rhapsody";
     }
+
+//    private List<String> songs = new ArrayList<String>();
+//
+//    {
+//        songs.add("Hungarian Rhapsody");
+//        songs.add("Toccata and Fugue in D minor");
+//        songs.add("Symphony No.5 in C minor");
+//    }
+
+//
+//    @Override
+//    public List<String> getSong() {
+//        return songs;
+//    }
 }

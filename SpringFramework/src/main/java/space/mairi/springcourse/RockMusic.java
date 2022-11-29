@@ -8,16 +8,16 @@ import java.util.List;
 @Component
 public class RockMusic implements Music {
 
-    private List<String> songs = new ArrayList<String>();
+//    private List<String> songs = new ArrayList<String>();
 
-    {
-        songs.add("Hungarian Rhapsody");
-        songs.add("Toccata and Fugue in D minor");
-        songs.add("Symphony No.5 in C minor");
-    }
+//    {
+//        songs.add("Hungarian Rhapsody");
+//        songs.add("Toccata and Fugue in D minor");
+//        songs.add("Symphony No.5 in C minor");
+//    }
 
     @Override
-    public List<String> getSong() {
-       return songs;
+    public String getSong() {
+       return "Hungarian Rhapsody";
     }
 }
